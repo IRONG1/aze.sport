@@ -254,7 +254,8 @@
     }
 
     .primary-btn,
-    .secondary-btn {
+    .secondary-btn,
+    .copy-btn {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -262,6 +263,7 @@
       border-radius: 999px;
       letter-spacing: 0;
       transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+      cursor: pointer;
     }
 
     .primary-btn {
@@ -288,31 +290,70 @@
 
     .primary-btn:active,
     .secondary-btn:active,
+    .copy-btn:active,
     .link-item:active {
       transform: scale(0.985);
     }
 
-    .download-hint {
-      margin-top: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      line-height: 1.45;
-      color: #292929;
-      flex-wrap: wrap;
+    .fallback-card {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: #f7fbf8;
+      border: 1px solid #dff3e6;
+      border-radius: 18px;
+      color: #2f3a32;
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.55;
     }
 
-    .download-hint a {
-      color: #10bc4b;
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+    .fallback-title {
+      margin: 0 0 6px;
+      color: #1a8e40;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .fallback-card p {
+      margin: 0;
+    }
+
+    .line-id-row {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .line-id {
+      flex: 1;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid rgba(25, 201, 87, 0.2);
+      font-size: 14px;
+      font-weight: 700;
+      color: #111111;
+      overflow: hidden;
+    }
+
+    .copy-btn {
+      flex: 0 0 auto;
+      width: auto;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 0;
+      background: #19c957;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .more-panel {
-      margin-top: 14px;
+      margin: 14px -22px 0;
       background: #ffffff;
       color: #111;
       padding: 14px 16px calc(24px + env(safe-area-inset-bottom, 0px));
@@ -325,6 +366,7 @@
       font-weight: 700;
       color: #4f6553;
       letter-spacing: 0.02em;
+      text-align: left;
     }
 
     .links {
@@ -442,13 +484,18 @@
         min-height: 50px;
         font-size: 14px;
       }
+
+      .more-panel {
+        margin-left: -18px;
+        margin-right: -18px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="topbar">
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="展開導航">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="展開導航" type="button">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 6h18"></path>
           <path d="M3 12h18"></path>
@@ -461,16 +508,16 @@
         <span>LINE</span>
       </div>
 
-      <button class="icon-btn share-btn" id="shareBtn" aria-label="分享頁面">
+      <button class="icon-btn share-btn" id="shareBtn" aria-label="分享頁面" type="button">
         <img src="forward.png" alt="分享" />
       </button>
 
       <nav class="drawer" id="drawer">
-        <a class="drawer-item" href="https://https://www.facebook.com/share/1BDj2fpBCE/?mibextid=wwXIfr/" target="_blank" rel="noopener noreferrer">
+        <a class="drawer-item" href="https://www.facebook.com/share/1BDj2fpBCE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
           <span class="drawer-icon"><img src="facebook.png" alt="Facebook" /></span>
           <span>Facebook</span>
         </a>
-        <a class="drawer-item" href="https://line.me/ti/p/-6XfFBLVn6" target="_blank" rel="noopener noreferrer">
+        <a class="drawer-item js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
           <span class="drawer-icon"><img src="line.png" alt="LINE" /></span>
           <span>LINE</span>
         </a>
@@ -499,77 +546,104 @@
       <div class="intro-box">溫和燃脂 · 產後修復 · 塑形提氣質<br />✅阿澤古法瘦身操✅</div>
 
       <div class="btn-stack">
-        <a class="primary-btn" href="https://line.me/ti/p/-6XfFBLVn6" target="_blank" rel="noopener noreferrer">領取食譜+直播回放</a>
-        <a class="secondary-btn" href="https://line.me/ti/p/-6XfFBLVn6" target="_blank" rel="noopener noreferrer">加入 LINE 和主播聊聊</a>
+        <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">領取食譜+直播回放</a>
+        <a class="secondary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">加入 LINE 和主播聊聊</a>
       </div>
 
-     
-    <section class="more-panel">
-      <h2 class="section-title">更多內容與延伸入口</h2>
-      <div class="links">
-        <a class="link-item facebook" href="https://www.facebook.com/share/1BDj2fpBCE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box"><img src="facebook.png" alt="Facebook"></div>
-          <div class="link-text">
-            <div class="link-title">Facebook</div>
-            <div class="link-desc">查看更多資訊</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item line" href="https://line.me/ti/p/~azaz189189" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box"><img src="line.png" alt="LINE"></div>
-          <div class="link-text">
-            <div class="link-title">LINE</div>
-            <div class="link-desc">一對一聯係</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box"><img src="instagram.png" alt="Instagram"></div>
-          <div class="link-text">
-            <div class="link-title">Instagram</div>
-            <div class="link-desc">追蹤最新内容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item youtube" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box"><img src="youtube.png" alt="YouTube"></div>
-          <div class="link-text">
-            <div class="link-title">YouTube</div>
-            <div class="link-desc">觀看影片内容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item tiktok" href="https://www.tiktok.com/@naoctc8ot3" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box"><img src="tiktok.png" alt="TikTok"></div>
-          <div class="link-text">
-            <div class="link-title">TikTok</div>
-            <div class="link-desc">短影片及精華内容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item email" href="mailto:wangjiarong21@gmail.com">
-          <div class="icon-box"><img src="gmail.png" alt="Email"></div>
-          <div class="link-text">
-            <div class="link-title">Email</div>
-            <div class="link-desc">Email 聯係我</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
+      <div class="fallback-card">
+        <div class="fallback-title">打不開 LINE 怎麼辦？</div>
+        <p>如果 TikTok 內置瀏覽器沒有跳轉，請點擊右上角「...」選擇在瀏覽器打開，或直接複製 LINE ID 添加。</p>
+        <div class="line-id-row">
+          <div class="line-id" id="lineIdText">azaz189189</div>
+          <button class="copy-btn" id="copyLineIdBtn" type="button">複製 ID</button>
+        </div>
       </div>
 
-      <div class="footer">© 2026 Aze</div>
-    </section>
+      <section class="more-panel">
+        <h2 class="section-title">更多內容與延伸入口</h2>
+        <div class="links">
+          <a class="link-item facebook" href="https://www.facebook.com/share/1BDj2fpBCE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><img src="facebook.png" alt="Facebook"></div>
+            <div class="link-text">
+              <div class="link-title">Facebook</div>
+              <div class="link-desc">查看更多資訊</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
+          <a class="link-item line js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
+            <div class="icon-box"><img src="line.png" alt="LINE"></div>
+            <div class="link-text">
+              <div class="link-title">LINE</div>
+              <div class="link-desc">一對一聯係</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
+          <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><img src="instagram.png" alt="Instagram"></div>
+            <div class="link-text">
+              <div class="link-title">Instagram</div>
+              <div class="link-desc">追蹤最新内容</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
+          <a class="link-item youtube" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><img src="youtube.png" alt="YouTube"></div>
+            <div class="link-text">
+              <div class="link-title">YouTube</div>
+              <div class="link-desc">觀看影片内容</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
+          <a class="link-item tiktok" href="https://www.tiktok.com/@naoctc8ot3" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><img src="tiktok.png" alt="TikTok"></div>
+            <div class="link-text">
+              <div class="link-title">TikTok</div>
+              <div class="link-desc">短影片及精華内容</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
+          <a class="link-item email" href="mailto:wangjiarong21@gmail.com">
+            <div class="icon-box"><img src="gmail.png" alt="Email"></div>
+            <div class="link-text">
+              <div class="link-title">Email</div>
+              <div class="link-desc">Email 聯係我</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+        </div>
+
+        <div class="footer">© 2026 Aze</div>
+      </section>
+    </main>
   </div>
 
   <script>
+    const LINE_URL = 'https://line.me/ti/p/-6XfFBLVn6';
+    const LINE_ID = 'azaz189189';
+
     const menuBtn = document.getElementById('menuBtn');
     const drawer = document.getElementById('drawer');
     const shareBtn = document.getElementById('shareBtn');
+    const copyLineIdBtn = document.getElementById('copyLineIdBtn');
+
+    function openLine(event) {
+      if (event) event.preventDefault();
+
+      // TikTok 內置瀏覽器對 target="_blank" 和自動跳轉不穩定；
+      // 這裡使用「用戶點擊後，當前頁跳轉」的方式，成功率更高。
+      window.location.href = LINE_URL;
+    }
+
+    document.querySelectorAll('.js-line-link').forEach((link) => {
+      link.setAttribute('href', LINE_URL);
+      link.removeAttribute('target');
+      link.addEventListener('click', openLine);
+    });
 
     menuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -582,17 +656,38 @@
       }
     });
 
+    copyLineIdBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(LINE_ID);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = LINE_ID;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+        alert('LINE ID 已複製：' + LINE_ID);
+      } catch (err) {
+        alert('請手動複製 LINE ID：' + LINE_ID);
+      }
+    });
+
     shareBtn.addEventListener('click', async () => {
       const shareData = {
         title: document.title,
-        text: '欢迎查看我的页面',
+        text: '歡迎查看我的頁面',
         url: window.location.href
       };
 
       try {
         if (navigator.share) {
           await navigator.share(shareData);
-        } else if (navigator.clipboard) {
+        } else if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(window.location.href);
           alert('鏈接已複製');
         } else {
