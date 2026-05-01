@@ -295,9 +295,8 @@
       transform: scale(0.985);
     }
 
-    .fallback-card {
+        .fallback-card {
       margin-top: 16px;
-      padding: 14px 16px;
       background: #f7fbf8;
       border: 1px solid #dff3e6;
       border-radius: 18px;
@@ -305,17 +304,53 @@
       text-align: left;
       font-size: 13px;
       line-height: 1.55;
+      overflow: hidden;
     }
 
-    .fallback-title {
-      margin: 0 0 6px;
+    .fallback-card summary {
+      min-height: 52px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       color: #1a8e40;
       font-size: 14px;
       font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
     }
 
-    .fallback-card p {
-      margin: 0;
+    .fallback-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .fallback-arrow {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(25, 201, 87, 0.12);
+      color: #19c957;
+      font-size: 17px;
+      font-weight: 900;
+      transition: transform 0.18s ease;
+    }
+
+    .fallback-card[open] .fallback-arrow {
+      transform: rotate(90deg);
+    }
+
+    .fallback-content {
+      padding: 0 16px 14px;
+      border-top: 1px solid rgba(25, 201, 87, 0.12);
+    }
+
+    .fallback-content p {
+      margin: 12px 0 0;
     }
 
     .line-id-row {
@@ -550,14 +585,19 @@
         <a class="secondary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">加入 LINE 和主播聊聊</a>
       </div>
 
-      <div class="fallback-card">
-        <div class="fallback-title">打不開 LINE 怎麼辦？</div>
-        <p>如果 TikTok 內置瀏覽器沒有跳轉，請點擊右上角「...」選擇在瀏覽器打開，或直接複製 LINE ID 添加。</p>
-        <div class="line-id-row">
-          <div class="line-id" id="lineIdText">azaz189189</div>
-          <button class="copy-btn" id="copyLineIdBtn" type="button">複製 ID</button>
+      <details class="fallback-card">
+        <summary>
+          <span>打不開 LINE 怎麼辦？</span>
+          <span class="fallback-arrow">›</span>
+        </summary>
+        <div class="fallback-content">
+          <p>如果 TikTok 內置瀏覽器沒有跳轉，請點擊右上角「...」選擇在瀏覽器打開，或直接複製 LINE ID 添加。</p>
+          <div class="line-id-row">
+            <div class="line-id" id="lineIdText">azaz189189</div>
+            <button class="copy-btn" id="copyLineIdBtn" type="button">複製 ID</button>
+          </div>
         </div>
-      </div>
+      </details>
 
       <section class="more-panel">
         <h2 class="section-title">更多內容與延伸入口</h2>
