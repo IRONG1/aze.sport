@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>阿澤古法健身｜健康食譜領取</title>
+  <title>阿澤古法健身-健康食譜領取</title>
   <style>
     :root {
       --bg: #f7f5ef;
@@ -16,11 +16,9 @@
       --green-deep: #1f6f3a;
       --green-light: #e7f3e8;
 
-      --cream: #fffaf0;
       --border: rgba(47, 79, 55, 0.12);
       --shadow: 0 18px 42px rgba(38, 64, 43, 0.10);
       --shadow-soft: 0 10px 26px rgba(38, 64, 43, 0.06);
-
       --maxw: 430px;
     }
 
@@ -29,8 +27,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       min-height: 100%;
       background: var(--bg);
@@ -60,16 +57,16 @@
       position: relative;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at top, #ffffff 0%, #f7f5ef 48%, #f3efe4 100%);
+        radial-gradient(circle at top, #ffffff 0%, #f7f5ef 50%, #f3efe4 100%);
     }
 
     .topbar {
       position: relative;
       display: grid;
-      grid-template-columns: 44px 1fr 44px;
+      grid-template-columns: 44px 1fr 36px;
       align-items: center;
       gap: 10px;
-      padding: calc(env(safe-area-inset-top, 0px) + 14px) 18px 0;
+      padding: calc(env(safe-area-inset-top, 0px) + 16px) 16px 0;
       z-index: 20;
     }
 
@@ -87,15 +84,10 @@
       transform: scale(0.96);
     }
 
-    .menu-btn,
-    .share-btn {
+    .menu-btn {
       width: 44px;
       height: 44px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.64);
-      border: 1px solid rgba(47, 79, 55, 0.08);
-      box-shadow: 0 8px 18px rgba(38, 64, 43, 0.05);
-      backdrop-filter: blur(12px);
+      border-radius: 14px;
     }
 
     .menu-btn svg {
@@ -108,14 +100,6 @@
       stroke-linejoin: round;
     }
 
-    .share-btn img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-      display: block;
-      opacity: 0.82;
-    }
-
     .brand {
       display: inline-flex;
       align-items: center;
@@ -123,7 +107,7 @@
       gap: 7px;
       min-width: 0;
       text-align: center;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
       color: var(--green-deep);
       letter-spacing: -0.02em;
@@ -146,14 +130,30 @@
       display: block;
     }
 
+    .share-btn {
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .share-btn img {
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
+      display: block;
+      opacity: 0.82;
+    }
+
     .drawer {
       position: absolute;
       top: calc(env(safe-area-inset-top, 0px) + 66px);
-      left: 18px;
-      width: 178px;
-      background: rgba(255, 255, 255, 0.94);
+      left: 16px;
+      width: 172px;
+      background: rgba(255, 255, 255, 0.96);
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 16px;
       box-shadow: var(--shadow);
       padding: 8px;
       display: flex;
@@ -165,7 +165,7 @@
       transform-origin: top left;
       transition: opacity 0.18s ease, transform 0.18s ease;
       z-index: 30;
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(14px);
     }
 
     .drawer.open {
@@ -178,9 +178,9 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      min-height: 42px;
+      min-height: 40px;
       padding: 8px 10px;
-      border-radius: 13px;
+      border-radius: 12px;
       color: var(--text);
       transition: background 0.18s ease, transform 0.18s ease;
     }
@@ -194,8 +194,8 @@
     }
 
     .drawer-icon {
-      width: 27px;
-      height: 27px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
@@ -218,120 +218,44 @@
     }
 
     .hero {
-      padding: 36px 22px 18px;
+      padding: 42px 22px 18px;
       text-align: center;
       background: transparent;
     }
 
-    .avatar-wrap {
-      position: relative;
-      width: 128px;
-      height: 128px;
-      margin: 0 auto;
-    }
-
-    .avatar-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -8px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(47, 143, 78, 0.18), rgba(255, 250, 240, 0.8));
-      z-index: 0;
-    }
-
     .avatar {
-      position: relative;
-      z-index: 1;
-      width: 118px;
-      height: 118px;
+      width: 124px;
+      height: 124px;
       object-fit: cover;
       border-radius: 50%;
       display: block;
-      margin: 5px auto 0;
+      margin: 0 auto;
       border: 5px solid #ffffff;
       box-shadow: 0 18px 38px rgba(38, 64, 43, 0.16);
       background: #e7e7e7;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 22px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(47, 79, 55, 0.10);
-      color: var(--green-deep);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-    }
-
     .title {
-      margin: 14px 0 0;
-      font-size: 28px;
-      line-height: 1.15;
-      font-weight: 800;
+      margin: 22px 0 0;
+      font-size: 26px;
+      line-height: 1.18;
+      font-weight: 700;
       color: var(--text);
       letter-spacing: -0.04em;
     }
 
-    .subtitle {
-      margin: 10px auto 0;
-      max-width: 310px;
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--subtext);
-      font-weight: 500;
-    }
-
     .intro-box {
-      margin: 18px auto 0;
+      margin: 20px auto 0;
       max-width: 100%;
       background: rgba(255, 255, 255, 0.82);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 18px 18px;
-      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 22px 20px;
+      font-size: 18px;
+      line-height: 1.5;
       color: var(--subtext);
-      font-size: 15px;
-      line-height: 1.65;
       letter-spacing: -0.02em;
-    }
-
-    .tag-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 13px;
-    }
-
-    .tag {
-      min-height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 7px 8px;
-      border-radius: 999px;
-      background: var(--green-light);
-      color: var(--green-deep);
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .intro-main {
-      font-size: 16px;
-      font-weight: 700;
-      color: #344237;
-    }
-
-    .intro-sub {
-      margin-top: 5px;
-      font-size: 13px;
-      color: var(--subtext);
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-stack {
@@ -354,12 +278,12 @@
     }
 
     .primary-btn {
-      min-height: 58px;
+      min-height: 56px;
       background: linear-gradient(180deg, #3daa62 0%, #2f8f4e 100%);
       border: 0;
       box-shadow: 0 14px 28px rgba(47, 143, 78, 0.28);
       color: rgba(255, 255, 255, 0.98);
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     }
@@ -367,11 +291,11 @@
     .secondary-btn {
       min-height: 52px;
       background: rgba(255, 255, 255, 0.78);
-      border: 1.5px solid rgba(47, 143, 78, 0.24);
+      border: 1.5px solid rgba(47, 143, 78, 0.26);
       color: var(--green-deep);
       box-shadow: var(--shadow-soft);
       font-size: 15px;
-      font-weight: 800;
+      font-weight: 900;
       font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
     }
 
@@ -382,18 +306,11 @@
       transform: scale(0.985);
     }
 
-    .trust-note {
-      margin-top: 11px;
-      color: rgba(31, 36, 31, 0.52);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
     .fallback-card {
       margin-top: 16px;
       background: rgba(255, 255, 255, 0.74);
       border: 1px solid rgba(47, 143, 78, 0.18);
-      border-radius: 20px;
+      border-radius: 18px;
       color: #2f3a32;
       text-align: left;
       font-size: 13px;
@@ -484,41 +401,43 @@
     }
 
     .more-panel {
-      margin: 18px -22px 0;
+      margin: 14px -22px 0;
       background: rgba(255, 255, 255, 0.62);
       color: var(--text);
-      padding: 18px 16px calc(24px + env(safe-area-inset-bottom, 0px));
+      padding: 14px 16px calc(24px + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid rgba(47, 79, 55, 0.08);
-      border-radius: 28px 28px 0 0;
       backdrop-filter: blur(12px);
     }
 
     .section-title {
       margin: 0 0 12px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--green-deep);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
       text-align: left;
     }
 
     .links {
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 12px;
     }
 
     .link-item {
       --c: #333;
+      --bg1: rgba(255, 255, 255, 0.86);
+      --bg2: rgba(255, 255, 255, 0.68);
+      --bd: rgba(47, 79, 55, 0.10);
       display: flex;
       align-items: center;
       gap: 14px;
       width: 100%;
-      min-height: 56px;
+      min-height: 58px;
       padding: 12px 15px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(47, 79, 55, 0.10);
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      border: 1px solid var(--bd);
       box-shadow: var(--shadow-soft);
       color: var(--text);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -597,26 +516,17 @@
       }
 
       .title {
-        font-size: 26px;
-      }
-
-      .subtitle {
-        font-size: 14px;
+        font-size: 24px;
       }
 
       .intro-box {
-        padding: 17px 15px;
-      }
-
-      .tag {
-        font-size: 11px;
-        padding-left: 6px;
-        padding-right: 6px;
+        font-size: 17px;
+        padding: 20px 16px;
       }
 
       .primary-btn {
-        min-height: 56px;
-        font-size: 16px;
+        min-height: 54px;
+        font-size: 15px;
       }
 
       .secondary-btn {
@@ -631,7 +541,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="page">
     <header class="topbar">
@@ -645,7 +554,7 @@
 
       <div class="brand">
         <span class="brand-mark"><img src="line.png" alt="LINE" /></span>
-        <span>LINE 領取專區</span>
+        <span>LINE</span>
       </div>
 
       <button class="icon-btn share-btn" id="shareBtn" aria-label="分享頁面" type="button">
@@ -657,27 +566,22 @@
           <span class="drawer-icon"><img src="facebook.png" alt="Facebook" /></span>
           <span>Facebook</span>
         </a>
-
         <a class="drawer-item js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
           <span class="drawer-icon"><img src="line.png" alt="LINE" /></span>
           <span>LINE</span>
         </a>
-
         <a class="drawer-item" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
           <span class="drawer-icon"><img src="instagram.png" alt="Instagram" /></span>
           <span>Instagram</span>
         </a>
-
         <a class="drawer-item" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer">
           <span class="drawer-icon"><img src="youtube.png" alt="YouTube" /></span>
           <span>YouTube</span>
         </a>
-
         <a class="drawer-item" href="https://www.tiktok.com/@naoctc8ot3" target="_blank" rel="noopener noreferrer">
           <span class="drawer-icon"><img src="tiktok.png" alt="TikTok" /></span>
           <span>TikTok</span>
         </a>
-
         <a class="drawer-item" href="mailto:wangjiarong21@gmail.com">
           <span class="drawer-icon"><img src="gmail.png" alt="Email" /></span>
           <span>Email</span>
@@ -686,41 +590,18 @@
     </header>
 
     <main class="hero">
-      <div class="avatar-wrap">
-        <img class="avatar" src="aze2.jpg" alt="阿澤古法健身頭像" />
-      </div>
-
-      <div class="eyebrow">健康食譜・直播回放・古法瘦身操</div>
+      <img class="avatar" src="aze2.jpg" alt="頭像" />
 
       <h1 class="title">阿澤古法健身</h1>
 
-      <p class="subtitle">
-        溫和燃脂，產後修復，塑形提氣質。跟著阿澤一起找回輕盈狀態。
-      </p>
-
       <div class="intro-box">
-        <div class="tag-row">
-          <span class="tag">溫和燃脂</span>
-          <span class="tag">產後修復</span>
-          <span class="tag">塑形提氣質</span>
-        </div>
-
-        <div class="intro-main">免費領取健康食譜 + 直播回放</div>
-        <div class="intro-sub">加入 LINE 後即可領取，也可以一對一諮詢適合你的練習方式。</div>
+        溫和燃脂 · 產後修復 · 塑形提氣質<br />
+        ✅阿澤古法瘦身操✅
       </div>
 
       <div class="btn-stack">
-        <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
-          免費領取食譜 + 直播回放
-        </a>
-
-        <a class="secondary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
-          加入 LINE，和阿澤聊聊
-        </a>
-      </div>
-
-      <div class="trust-note">
-        點擊後會跳轉 LINE；若在 TikTok 內打不開，可使用下方備用方式。
+        <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">領取食譜+直播回放</a>
+        <a class="secondary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">加入 LINE 和主播聊聊</a>
       </div>
 
       <details class="fallback-card">
@@ -728,14 +609,12 @@
           <span>打不開 LINE 怎麼辦？</span>
           <span class="fallback-arrow">›</span>
         </summary>
-
         <div class="fallback-content">
           <p>
-            如果 TikTok 內置瀏覽器沒有跳轉：<br />
-            方法一：點擊右上角「...」，選擇在瀏覽器打開。<br />
+            如果 TikTok 內置瀏覽器沒有跳轉<br />
+            方法一：請點擊右上角「...」選擇在瀏覽器打開<br />
             方法二：直接複製 LINE ID 添加。
           </p>
-
           <div class="line-id-row">
             <div class="line-id" id="lineIdText">azaz189189</div>
             <button class="copy-btn" id="copyLineIdBtn" type="button">複製 ID</button>
@@ -745,17 +624,7 @@
 
       <section class="more-panel">
         <h2 class="section-title">更多內容與延伸入口</h2>
-
         <div class="links">
-          <a class="link-item line js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
-            <div class="icon-box"><img src="line.png" alt="LINE"></div>
-            <div class="link-text">
-              <div class="link-title">LINE</div>
-              <div class="link-desc">領取食譜與一對一聯繫</div>
-            </div>
-            <div class="arrow">›</div>
-          </a>
-
           <a class="link-item facebook" href="https://www.facebook.com/share/1BDj2fpBCE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
             <div class="icon-box"><img src="facebook.png" alt="Facebook"></div>
             <div class="link-text">
@@ -765,11 +634,20 @@
             <div class="arrow">›</div>
           </a>
 
+          <a class="link-item line js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">
+            <div class="icon-box"><img src="line.png" alt="LINE"></div>
+            <div class="link-text">
+              <div class="link-title">LINE</div>
+              <div class="link-desc">一對一聯係</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
           <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
             <div class="icon-box"><img src="instagram.png" alt="Instagram"></div>
             <div class="link-text">
               <div class="link-title">Instagram</div>
-              <div class="link-desc">追蹤最新內容</div>
+              <div class="link-desc">追蹤最新内容</div>
             </div>
             <div class="arrow">›</div>
           </a>
@@ -778,7 +656,7 @@
             <div class="icon-box"><img src="youtube.png" alt="YouTube"></div>
             <div class="link-text">
               <div class="link-title">YouTube</div>
-              <div class="link-desc">觀看影片內容</div>
+              <div class="link-desc">觀看影片内容</div>
             </div>
             <div class="arrow">›</div>
           </a>
@@ -787,7 +665,7 @@
             <div class="icon-box"><img src="tiktok.png" alt="TikTok"></div>
             <div class="link-text">
               <div class="link-title">TikTok</div>
-              <div class="link-desc">短影片及精華內容</div>
+              <div class="link-desc">短影片及精華内容</div>
             </div>
             <div class="arrow">›</div>
           </a>
@@ -796,7 +674,7 @@
             <div class="icon-box"><img src="gmail.png" alt="Email"></div>
             <div class="link-text">
               <div class="link-title">Email</div>
-              <div class="link-desc">Email 聯繫我</div>
+              <div class="link-desc">Email 聯係我</div>
             </div>
             <div class="arrow">›</div>
           </a>
@@ -856,7 +734,6 @@
           document.execCommand('copy');
           document.body.removeChild(textarea);
         }
-
         alert('LINE ID 已複製：' + LINE_ID);
       } catch (err) {
         alert('請手動複製 LINE ID：' + LINE_ID);
@@ -866,7 +743,7 @@
     shareBtn.addEventListener('click', async () => {
       const shareData = {
         title: document.title,
-        text: '歡迎查看阿澤古法健身頁面',
+        text: '歡迎查看我的頁面',
         url: window.location.href
       };
 
