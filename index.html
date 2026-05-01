@@ -6,19 +6,17 @@
   <title>阿澤古法健身-健康食譜領取</title>
   <style>
     :root {
-      --bg: #f7f5ef;
-      --card: #ffffff;
-      --soft: #eef5ea;
+      --bg: #fffaf2;
+      --soft: #f3eadc;
       --text: #1f241f;
-      --subtext: #6f766d;
-
-      --green: #2f8f4e;
-      --green-deep: #1f6f3a;
-      --green-light: #e7f3e8;
-
-      --border: rgba(47, 79, 55, 0.12);
-      --shadow: 0 18px 42px rgba(38, 64, 43, 0.10);
-      --shadow-soft: 0 10px 26px rgba(38, 64, 43, 0.06);
+      --subtext: #6f7568;
+      --green: #2fb86f;
+      --green-deep: #17894f;
+      --green-soft: #e7f6ed;
+      --accent: #f59e4c;
+      --accent-soft: #fff0dc;
+      --border: rgba(31, 36, 31, 0.08);
+      --shadow: 0 14px 32px rgba(45, 91, 59, 0.12);
       --maxw: 430px;
     }
 
@@ -54,10 +52,9 @@
       width: 100%;
       max-width: var(--maxw);
       min-height: 100vh;
+      background: var(--bg);
       position: relative;
       overflow-x: hidden;
-      background:
-        radial-gradient(circle at top, #ffffff 0%, #f7f5ef 50%, #f3efe4 100%);
     }
 
     .topbar {
@@ -108,7 +105,7 @@
       min-width: 0;
       text-align: center;
       font-size: 17px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--green-deep);
       letter-spacing: -0.02em;
       user-select: none;
@@ -143,7 +140,6 @@
       height: 23px;
       object-fit: contain;
       display: block;
-      opacity: 0.82;
     }
 
     .drawer {
@@ -151,7 +147,7 @@
       top: calc(env(safe-area-inset-top, 0px) + 66px);
       left: 16px;
       width: 172px;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 250, 242, 0.98);
       border: 1px solid var(--border);
       border-radius: 16px;
       box-shadow: var(--shadow);
@@ -186,7 +182,7 @@
     }
 
     .drawer-item:hover {
-      background: #f3f5f0;
+      background: #f3eadc;
     }
 
     .drawer-item:active {
@@ -200,7 +196,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: #f0f3ed;
+      background: #f3eadc;
       flex: 0 0 auto;
       overflow: hidden;
     }
@@ -214,13 +210,13 @@
 
     .drawer-item span:last-child {
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .hero {
       padding: 42px 22px 18px;
       text-align: center;
-      background: transparent;
+      background: var(--bg);
     }
 
     .avatar {
@@ -230,32 +226,30 @@
       border-radius: 50%;
       display: block;
       margin: 0 auto;
-      border: 5px solid #ffffff;
-      box-shadow: 0 18px 38px rgba(38, 64, 43, 0.16);
-      background: #e7e7e7;
+      box-shadow: 0 12px 30px rgba(45, 91, 59, 0.16);
+      background: #e8dfd1;
     }
 
     .title {
       margin: 22px 0 0;
       font-size: 26px;
       line-height: 1.18;
-      font-weight: 700;
-      color: var(--text);
+      font-weight: 500;
       letter-spacing: -0.04em;
+      color: var(--text);
     }
 
     .intro-box {
       margin: 20px auto 0;
       max-width: 100%;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #f6efe3 0%, #eaf7ee 100%);
       border-radius: 22px;
       padding: 22px 20px;
       font-size: 18px;
       line-height: 1.5;
-      color: var(--subtext);
+      color: #586150;
       letter-spacing: -0.02em;
-      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(47, 184, 111, 0.08);
     }
 
     .btn-stack {
@@ -279,21 +273,21 @@
 
     .primary-btn {
       min-height: 56px;
-      background: linear-gradient(180deg, #3daa62 0%, #2f8f4e 100%);
+      background: linear-gradient(180deg, #37c77a 0%, #1f9f5d 100%);
       border: 0;
-      box-shadow: 0 14px 28px rgba(47, 143, 78, 0.28);
-      color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 10px 22px rgba(31, 159, 93, 0.24);
+      color: #ffffff;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 600;
       font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     }
 
     .secondary-btn {
       min-height: 52px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1.5px solid rgba(47, 143, 78, 0.26);
+      background: #fffaf2;
+      border: 1.5px solid rgba(31, 159, 93, 0.38);
       color: var(--green-deep);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 5px 14px rgba(45, 91, 59, 0.07);
       font-size: 15px;
       font-weight: 900;
       font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
@@ -306,114 +300,91 @@
       transform: scale(0.985);
     }
 
-    .fallback-card {
-      margin-top: 16px;
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid rgba(47, 143, 78, 0.18);
+    .line-copy-card {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: var(--green-soft);
+      border: 1px solid #cfead8;
       border-radius: 18px;
-      color: #2f3a32;
-      text-align: left;
-      font-size: 13px;
-      line-height: 1.55;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 10px 22px rgba(47, 184, 111, 0.08);
     }
 
-    .fallback-card summary {
-      min-height: 52px;
-      padding: 0 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      color: var(--green-deep);
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      list-style: none;
-      user-select: none;
-    }
-
-    .fallback-card summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .fallback-arrow {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(47, 143, 78, 0.12);
-      color: var(--green);
-      font-size: 17px;
-      font-weight: 900;
-      transition: transform 0.18s ease;
-    }
-
-    .fallback-card[open] .fallback-arrow {
-      transform: rotate(90deg);
-    }
-
-    .fallback-content {
-      padding: 0 16px 14px;
-      border-top: 1px solid rgba(47, 143, 78, 0.12);
-    }
-
-    .fallback-content p {
-      margin: 12px 0 0;
-      color: #586258;
-    }
-
-    .line-id-row {
-      margin-top: 10px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .line-id {
+    .line-copy-main {
       flex: 1;
-      min-height: 38px;
+      min-width: 0;
+      min-height: 48px;
       display: flex;
       align-items: center;
+      gap: 10px;
       padding: 0 12px;
-      border-radius: 12px;
       background: #ffffff;
-      border: 1px solid rgba(47, 143, 78, 0.22);
-      font-size: 14px;
+      border: 1px solid rgba(47, 184, 111, 0.26);
+      border-radius: 14px;
+    }
+
+    .line-copy-icon {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .line-copy-text {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.15;
+    }
+
+    .line-copy-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green-deep);
+      text-transform: uppercase;
+    }
+
+    .line-copy-id {
+      margin-top: 3px;
+      font-size: 15px;
       font-weight: 800;
       color: var(--text);
-      overflow: hidden;
+      word-break: break-all;
     }
 
     .copy-btn {
       flex: 0 0 auto;
       width: auto;
-      min-height: 38px;
-      padding: 0 14px;
+      min-height: 48px;
+      padding: 0 16px;
       border: 0;
-      background: var(--green);
+      border-radius: 14px;
+      background: var(--green-deep);
       color: #ffffff;
       font-size: 13px;
       font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 8px 16px rgba(23, 137, 79, 0.16);
     }
 
     .more-panel {
       margin: 14px -22px 0;
-      background: rgba(255, 255, 255, 0.62);
+      background: #fffdf8;
       color: var(--text);
       padding: 14px 16px calc(24px + env(safe-area-inset-bottom, 0px));
-      border-top: 1px solid rgba(47, 79, 55, 0.08);
-      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(31, 36, 31, 0.06);
     }
 
     .section-title {
       margin: 0 0 12px;
       font-size: 14px;
-      font-weight: 800;
-      color: var(--green-deep);
+      font-weight: 700;
+      color: #48614d;
       letter-spacing: 0.02em;
       text-align: left;
     }
@@ -426,9 +397,9 @@
 
     .link-item {
       --c: #333;
-      --bg1: rgba(255, 255, 255, 0.86);
-      --bg2: rgba(255, 255, 255, 0.68);
-      --bd: rgba(47, 79, 55, 0.10);
+      --bg1: #f8f8f8;
+      --bg2: #ffffff;
+      --bd: #ececec;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -437,15 +408,15 @@
       padding: 12px 15px;
       border-radius: 16px;
       background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      border: 1px solid var(--bd);
-      box-shadow: var(--shadow-soft);
+      border: 1.5px solid var(--bd);
+      box-shadow: 0 8px 22px rgba(45, 91, 59, 0.06);
       color: var(--text);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .link-item:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(38, 64, 43, 0.09);
+      box-shadow: 0 12px 26px rgba(45, 91, 59, 0.11);
     }
 
     .icon-box {
@@ -476,14 +447,14 @@
 
     .link-title {
       font-size: 15px;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.2;
     }
 
     .link-desc {
       margin-top: 3px;
       font-size: 11px;
-      color: #7d857a;
+      color: #7b7b70;
       line-height: 1.35;
     }
 
@@ -491,20 +462,20 @@
       flex: 0 0 auto;
       font-size: 18px;
       color: var(--c);
-      font-weight: 800;
+      font-weight: 700;
     }
 
-    .line { --c: #06c755; }
-    .instagram { --c: #e1306c; }
-    .facebook { --c: #1877f2; }
-    .youtube { --c: #ff5a36; }
-    .tiktok { --c: #111111; }
-    .email { --c: #ff8a3d; }
+    .line { --c: #06c755; --bg1: #edf9f1; --bg2: #ffffff; --bd: #c8efd5; }
+    .instagram { --c: #d94f84; --bg1: #fff0f6; --bg2: #fff8f2; --bd: #f6ccdd; }
+    .facebook { --c: #2f73d9; --bg1: #edf4ff; --bg2: #ffffff; --bd: #cadcff; }
+    .youtube { --c: #e9573f; --bg1: #fff0ea; --bg2: #fffaf5; --bd: #f4c8b8; }
+    .tiktok { --c: #202020; --bg1: #f2f7f7; --bg2: #ffffff; --bd: #d9e8e8; }
+    .email { --c: #d9772f; --bg1: #fff3e6; --bg2: #fffaf2; --bd: #f3d3b5; }
 
     .footer {
       text-align: center;
       font-size: 11px;
-      color: rgba(31, 36, 31, 0.38);
+      color: rgba(31, 36, 31, 0.42);
       margin-top: 18px;
       padding-bottom: 4px;
     }
@@ -591,36 +562,24 @@
 
     <main class="hero">
       <img class="avatar" src="aze2.jpg" alt="頭像" />
-
       <h1 class="title">阿澤古法健身</h1>
-
-      <div class="intro-box">
-        溫和燃脂 · 產後修復 · 塑形提氣質<br />
-        ✅阿澤古法瘦身操✅
-      </div>
+      <div class="intro-box">溫和燃脂 · 產後修復 · 塑形提氣質<br />✅阿澤古法瘦身操✅</div>
 
       <div class="btn-stack">
         <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">領取食譜+直播回放</a>
         <a class="secondary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">加入 LINE 和主播聊聊</a>
       </div>
 
-      <details class="fallback-card">
-        <summary>
-          <span>打不開 LINE 怎麼辦？</span>
-          <span class="fallback-arrow">›</span>
-        </summary>
-        <div class="fallback-content">
-          <p>
-            如果 TikTok 內置瀏覽器沒有跳轉<br />
-            方法一：請點擊右上角「...」選擇在瀏覽器打開<br />
-            方法二：直接複製 LINE ID 添加。
-          </p>
-          <div class="line-id-row">
-            <div class="line-id" id="lineIdText">azaz189189</div>
-            <button class="copy-btn" id="copyLineIdBtn" type="button">複製 ID</button>
+      <div class="line-copy-card">
+        <div class="line-copy-main">
+          <img class="line-copy-icon" src="line.png" alt="LINE" />
+          <div class="line-copy-text">
+            <span class="line-copy-label">LINE</span>
+            <span class="line-copy-id">azaz189189</span>
           </div>
         </div>
-      </details>
+        <button class="copy-btn" id="copyLineLinkBtn" type="button">複製鏈接</button>
+      </div>
 
       <section class="more-panel">
         <h2 class="section-title">更多內容與延伸入口</h2>
@@ -692,7 +651,7 @@
     const menuBtn = document.getElementById('menuBtn');
     const drawer = document.getElementById('drawer');
     const shareBtn = document.getElementById('shareBtn');
-    const copyLineIdBtn = document.getElementById('copyLineIdBtn');
+    const copyLineLinkBtn = document.getElementById('copyLineLinkBtn');
 
     function openLine(event) {
       if (event) event.preventDefault();
@@ -719,13 +678,13 @@
       }
     });
 
-    copyLineIdBtn.addEventListener('click', async () => {
+    copyLineLinkBtn.addEventListener('click', async () => {
       try {
         if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(LINE_ID);
+          await navigator.clipboard.writeText(LINE_URL);
         } else {
           const textarea = document.createElement('textarea');
-          textarea.value = LINE_ID;
+          textarea.value = LINE_URL;
           textarea.setAttribute('readonly', '');
           textarea.style.position = 'fixed';
           textarea.style.left = '-9999px';
@@ -734,9 +693,9 @@
           document.execCommand('copy');
           document.body.removeChild(textarea);
         }
-        alert('LINE ID 已複製：' + LINE_ID);
+        alert('LINE 鏈接已複製');
       } catch (err) {
-        alert('請手動複製 LINE ID：' + LINE_ID);
+        alert('請手動複製 LINE 鏈接：' + LINE_URL);
       }
     });
 
