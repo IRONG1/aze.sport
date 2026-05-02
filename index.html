@@ -711,7 +711,7 @@
           await navigator.share(shareData);
         } else if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(window.location.href);
-          alert('鏈接已複製');
+          alert('LINE ID已複製 請前往LINE客戶端添加好友');
         } else {
           alert(window.location.href);
         }
