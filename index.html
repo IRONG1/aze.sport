@@ -303,27 +303,20 @@
     }
 
     .line-help-link {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: fit-content;
-      margin: -2px auto 0;
-      padding: 8px 14px;
+      width: 100%;
+      min-height: 52px;
       border-radius: 999px;
-      background: rgba(47, 184, 111, 0.09);
-      border: 1px solid rgba(47, 184, 111, 0.22);
+      background: #fffaf2;
+      border: 1.5px solid rgba(31, 159, 93, 0.38);
       color: var(--green-deep);
-      font-size: 13px;
-      font-weight: 800;
+      box-shadow: 0 5px 14px rgba(45, 91, 59, 0.07);
+      font-size: 15px;
+      font-weight: 900;
+      font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
       line-height: 1.2;
-      box-shadow: 0 6px 14px rgba(45, 91, 59, 0.06);
-    }
-
-    .line-help-link span {
-      margin-left: 3px;
-      color: #f59e4c;
-      text-decoration: underline;
-      text-underline-offset: 2px;
     }
 
     .line-help-link:active {
@@ -604,7 +597,7 @@
 
       <div class="btn-stack">
         <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">添加主播LINE 領取專屬粉絲福利</a>
-        <a class="line-help-link" href="line-help.html">領取不成功？<span>點擊這裏</span></a>
+        <a class="line-help-link" href="line-help.html">領取不成功？點擊這裏</a>
       </div>
 
       <div class="line-copy-card">

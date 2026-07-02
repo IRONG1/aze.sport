@@ -12,7 +12,6 @@
       --green: #2fb86f;
       --green-deep: #17894f;
       --green-soft: #e7f6ed;
-      --accent: #f59e4c;
       --border: rgba(31, 36, 31, 0.08);
       --shadow: 0 14px 32px rgba(45, 91, 59, 0.12);
       --maxw: 430px;
@@ -78,6 +77,11 @@
       color: var(--text);
     }
 
+    .back-btn:active,
+    .copy-btn:active {
+      transform: scale(0.985);
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -97,29 +101,30 @@
     }
 
     .content {
-      padding: 36px 22px 0;
+      padding: 30px 18px 0;
       text-align: center;
     }
 
     .title {
       margin: 0;
-      font-size: 25px;
-      line-height: 1.22;
+      font-size: 24px;
+      line-height: 1.24;
       font-weight: 800;
       letter-spacing: -0.04em;
       color: var(--text);
     }
 
     .desc {
-      margin: 12px 0 0;
+      margin: 10px auto 0;
+      max-width: 340px;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.65;
       color: var(--subtext);
       font-weight: 600;
     }
 
     .line-copy-card {
-      margin-top: 22px;
+      margin-top: 18px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -128,6 +133,7 @@
       border: 1px solid #cfead8;
       border-radius: 18px;
       box-shadow: 0 10px 22px rgba(47, 184, 111, 0.08);
+      text-align: left;
     }
 
     .line-copy-main {
@@ -176,7 +182,6 @@
 
     .copy-btn {
       flex: 0 0 auto;
-      width: auto;
       min-height: 48px;
       padding: 0 16px;
       border: 0;
@@ -190,43 +195,22 @@
       box-shadow: 0 8px 16px rgba(23, 137, 79, 0.16);
     }
 
-    .copy-btn:active,
-    .back-btn:active,
-    .try-btn:active {
-      transform: scale(0.985);
-    }
-
-    .try-btn {
+    .tip-box {
       margin-top: 12px;
-      width: 100%;
-      min-height: 50px;
-      border: 0;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #37c77a 0%, #1f9f5d 100%);
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 22px rgba(31, 159, 93, 0.20);
-    }
-
-    .tips {
-      margin: 14px 0 0;
-      padding: 14px 15px;
-      border-radius: 18px;
+      padding: 12px 14px;
+      border-radius: 16px;
       background: #fffdf8;
-      border: 1px solid rgba(245, 158, 76, 0.22);
-      color: #7a5a30;
-      text-align: left;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 18px rgba(45, 91, 59, 0.05);
+      color: #816545;
       font-size: 13px;
-      line-height: 1.7;
-      font-weight: 650;
+      line-height: 1.6;
+      font-weight: 700;
+      text-align: left;
     }
 
     .guide {
-      margin-top: 26px;
+      margin-top: 24px;
       text-align: left;
     }
 
@@ -274,29 +258,48 @@
       flex: 0 0 auto;
     }
 
+    .step-body {
+      padding: 12px;
+    }
+
+    .step-text {
+      margin: 0 0 10px;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--subtext);
+      font-weight: 600;
+    }
+
+    .img-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #eef4ef;
+      border: 1px solid rgba(31, 159, 93, 0.10);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+    }
+
+    .img-frame.compact {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #f6fbf7 0%, #eef7f1 100%);
+    }
+
     .step-img {
       width: 100%;
+      height: auto;
       display: block;
       background: #f3eadc;
     }
 
-    .img-placeholder {
-      min-height: 180px;
-      padding: 24px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8a6a42;
-      font-size: 13px;
-      line-height: 1.7;
-      text-align: center;
-      background: repeating-linear-gradient(
-        -45deg,
-        #fff8ee,
-        #fff8ee 10px,
-        #f6ead9 10px,
-        #f6ead9 20px
-      );
+    .step-img.contain {
+      width: auto;
+      max-width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(24, 70, 42, 0.08);
     }
 
     .footer {
@@ -309,16 +312,24 @@
 
     @media (max-width: 390px) {
       .content {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       .title {
         font-size: 23px;
       }
 
+      .line-copy-card {
+        gap: 8px;
+      }
+
       .copy-btn {
         padding: 0 14px;
+      }
+
+      .step-img.contain {
+        max-height: 138px;
       }
     }
   </style>
@@ -336,7 +347,7 @@
 
     <main class="content">
       <h1 class="title">領取不成功？<br />請手動添加主播 LINE</h1>
-      <p class="desc">點擊下方按鈕複製 LINE ID，打開 LINE 後搜尋 ID 添加好友，即可領取專屬粉絲福利。</p>
+      <p class="desc">先複製 LINE ID，再依照下方圖片步驟操作，就可以手動找到阿澤並添加好友。</p>
 
       <div class="line-copy-card">
         <div class="line-copy-main">
@@ -349,31 +360,49 @@
         <button class="copy-btn" id="copyLineIdBtn" type="button">複製LINE</button>
       </div>
 
-      <a class="try-btn" href="https://line.me/ti/p/-6XfFBLVn6">再試一次打開 LINE</a>
-
-      <div class="tips">
-        複製成功後：打開 LINE → 點擊搜尋 → 貼上 LINE ID：azaz189189 → 添加好友 → 傳送訊息領取福利。
-      </div>
+      <div class="tip-box">提示：如果按鈕無法直接跳轉 LINE，請先點上方「複製LINE」，再按照下方教學手動搜尋 ID。</div>
 
       <section class="guide">
         <h2 class="guide-title">領取流程引導</h2>
         <div class="guide-list">
           <div class="guide-step">
-            <div class="step-head"><span class="step-num">1</span><span>打開 LINE，進入搜尋頁面</span></div>
-            <div class="img-placeholder">這裡放第 1 張流程照片<br />收到照片後把圖片命名為 guide-1.jpg，或直接讓我幫你替換。</div>
-            <!-- <img class="step-img" src="guide-1.jpg" alt="打開 LINE 搜尋頁面" /> -->
+            <div class="step-head"><span class="step-num">1</span><span>先在本頁點擊「複製LINE」</span></div>
+            <div class="step-body">
+              <p class="step-text">點一下複製按鈕，把阿澤的 LINE ID 複製起來。</p>
+              <div class="img-frame compact">
+                <img class="step-img contain" src="guide-1.png" alt="點擊複製 LINE 按鈕" />
+              </div>
+            </div>
           </div>
 
           <div class="guide-step">
-            <div class="step-head"><span class="step-num">2</span><span>貼上 LINE ID：azaz189189</span></div>
-            <div class="img-placeholder">這裡放第 2 張流程照片<br />收到照片後把圖片命名為 guide-2.jpg，或直接讓我幫你替換。</div>
-            <!-- <img class="step-img" src="guide-2.jpg" alt="搜尋 LINE ID" /> -->
+            <div class="step-head"><span class="step-num">2</span><span>進入 LINE 之後，點擊右上角加入好友</span></div>
+            <div class="step-body">
+              <p class="step-text">打開 LINE 首頁後，點擊右上角的人像加號圖示。</p>
+              <div class="img-frame">
+                <img class="step-img" src="guide-2.png" alt="進入 LINE 後點擊右上角加入好友" />
+              </div>
+            </div>
           </div>
 
           <div class="guide-step">
-            <div class="step-head"><span class="step-num">3</span><span>添加好友後，傳送訊息領取福利</span></div>
-            <div class="img-placeholder">這裡放第 3 張流程照片<br />收到照片後把圖片命名為 guide-3.jpg，或直接讓我幫你替換。</div>
-            <!-- <img class="step-img" src="guide-3.jpg" alt="添加好友領取福利" /> -->
+            <div class="step-head"><span class="step-num">3</span><span>在加入好友頁面，點擊「搜尋」</span></div>
+            <div class="step-body">
+              <p class="step-text">進入加入好友頁面後，選擇右側的搜尋功能。</p>
+              <div class="img-frame">
+                <img class="step-img" src="guide-3.png" alt="在加入好友頁面點擊搜尋" />
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-head"><span class="step-num">4</span><span>選擇 ID，貼上 azaz189189 並搜尋</span></div>
+            <div class="step-body">
+              <p class="step-text">確認選中「ID」，長按輸入框貼上剛剛複製的 LINE ID，然後點右側搜尋。</p>
+              <div class="img-frame">
+                <img class="step-img" src="guide-4.png" alt="貼上 LINE ID 並搜尋" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -383,7 +412,6 @@
   </div>
 
   <script>
-    const LINE_URL = 'https://line.me/ti/p/-6XfFBLVn6';
     const LINE_ID = 'azaz189189';
     const copyLineIdBtn = document.getElementById('copyLineIdBtn');
 
