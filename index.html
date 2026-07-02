@@ -302,6 +302,34 @@
       font-weight: 600;
     }
 
+    .line-help-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin: -2px auto 0;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(47, 184, 111, 0.09);
+      border: 1px solid rgba(47, 184, 111, 0.22);
+      color: var(--green-deep);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.2;
+      box-shadow: 0 6px 14px rgba(45, 91, 59, 0.06);
+    }
+
+    .line-help-link span {
+      margin-left: 3px;
+      color: #f59e4c;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .line-help-link:active {
+      transform: scale(0.985);
+    }
+
     .primary-btn:active,
     .secondary-btn:active,
     .copy-btn:active,
@@ -576,7 +604,7 @@
 
       <div class="btn-stack">
         <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">添加主播LINE 領取專屬粉絲福利</a>
-        <p class="line-fail-tip">若領取失敗，請前往 LINE 搜尋 ID， 自行添加好友領取</p>
+        <a class="line-help-link" href="line-help.html">領取不成功？<span>點擊這裏</span></a>
       </div>
 
       <div class="line-copy-card">
@@ -690,10 +718,10 @@
     copyLineLinkBtn.addEventListener('click', async () => {
       try {
         if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(LINE_URL);
+          await navigator.clipboard.writeText(LINE_ID);
         } else {
           const textarea = document.createElement('textarea');
-          textarea.value = LINE_URL;
+          textarea.value = LINE_ID;
           textarea.setAttribute('readonly', '');
           textarea.style.position = 'fixed';
           textarea.style.left = '-9999px';
@@ -702,9 +730,9 @@
           document.execCommand('copy');
           document.body.removeChild(textarea);
         }
-        alert('LINE 鏈接已複製');
+        alert('LINE ID 已複製，請前往 LINE 搜尋添加好友');
       } catch (err) {
-        alert('請手動複製 LINE 鏈接：' + LINE_URL);
+        alert('請手動複製 LINE ID：' + LINE_ID);
       }
     });
 
