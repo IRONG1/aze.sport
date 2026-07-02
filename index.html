@@ -214,7 +214,7 @@
     }
 
     .hero {
-      padding: 42px 22px 18px;
+      padding: 30px 22px 18px;
       text-align: center;
       background: var(--bg);
     }
@@ -231,8 +231,8 @@
     }
 
     .title {
-      margin: 22px 0 0;
-      font-size: 26px;
+      margin: 18px 0 0;
+      font-size: 25px;
       line-height: 1.18;
       font-weight: 500;
       letter-spacing: -0.04em;
@@ -240,12 +240,12 @@
     }
 
     .intro-box {
-      margin: 20px auto 0;
+      margin: 16px auto 0;
       max-width: 100%;
       background: linear-gradient(135deg, #f6efe3 0%, #eaf7ee 100%);
       border-radius: 22px;
-      padding: 22px 20px;
-      font-size: 18px;
+      padding: 18px 18px;
+      font-size: 17px;
       line-height: 1.5;
       color: #586150;
       letter-spacing: -0.02em;
@@ -253,9 +253,9 @@
     }
 
     .btn-stack {
-      margin-top: 20px;
+      margin-top: 16px;
       display: grid;
-      gap: 11px;
+      gap: 10px;
     }
 
     .primary-btn,
@@ -272,7 +272,7 @@
     }
 
     .primary-btn {
-      min-height: 56px;
+      min-height: 54px;
       background: linear-gradient(180deg, #37c77a 0%, #1f9f5d 100%);
       border: 0;
       box-shadow: 0 10px 22px rgba(31, 159, 93, 0.24);
@@ -306,17 +306,38 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
       width: 100%;
-      min-height: 52px;
+      min-height: 48px;
+      margin-top: 12px;
+      padding: 0 16px;
       border-radius: 999px;
-      background: #fffaf2;
-      border: 1.5px solid rgba(31, 159, 93, 0.38);
-      color: var(--green-deep);
-      box-shadow: 0 5px 14px rgba(45, 91, 59, 0.07);
+      background: linear-gradient(180deg, #fff4df 0%, #ffe7bf 100%);
+      border: 1.5px solid rgba(245, 158, 76, 0.72);
+      box-shadow: 0 8px 18px rgba(245, 158, 76, 0.18);
+      color: #a85a17;
       font-size: 15px;
       font-weight: 900;
-      font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
       line-height: 1.2;
+      text-align: center;
+    }
+
+    .line-help-link strong {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .line-help-icon {
+      flex: 0 0 auto;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .line-help-arrow {
+      flex: 0 0 auto;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
     }
 
     .line-help-link:active {
@@ -331,7 +352,7 @@
     }
 
     .line-copy-card {
-      margin-top: 14px;
+      margin-top: 12px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -400,6 +421,15 @@
       cursor: pointer;
       white-space: nowrap;
       box-shadow: 0 8px 16px rgba(23, 137, 79, 0.16);
+    }
+
+    .copy-hint {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #7e866f;
+      text-align: center;
+      font-weight: 600;
     }
 
     .more-panel {
@@ -517,16 +547,16 @@
       }
 
       .title {
-        font-size: 24px;
+        font-size: 23px;
       }
 
       .intro-box {
-        font-size: 17px;
-        padding: 20px 16px;
+        font-size: 16px;
+        padding: 17px 15px;
       }
 
       .primary-btn {
-        min-height: 54px;
+        min-height: 52px;
         font-size: 15px;
       }
 
@@ -597,7 +627,6 @@
 
       <div class="btn-stack">
         <a class="primary-btn js-line-link" href="https://line.me/ti/p/-6XfFBLVn6">添加主播LINE 領取專屬粉絲福利</a>
-        <a class="line-help-link" href="line-help.html">領取不成功？點擊這裏</a>
       </div>
 
       <div class="line-copy-card">
@@ -610,6 +639,13 @@
         </div>
         <button class="copy-btn" id="copyLineLinkBtn" type="button">複製LINE</button>
       </div>
+      <div class="copy-hint">若無法直接打開 LINE，可先複製 ID 再手動添加。</div>
+
+      <a class="line-help-link" href="line-help.html">
+        <span class="line-help-icon">⚠</span>
+        <span><strong>領取不成功？</strong> 點擊這裏</span>
+        <span class="line-help-arrow">›</span>
+      </a>
 
       <section class="more-panel">
         <h2 class="section-title">更多內容與延伸入口</h2>
